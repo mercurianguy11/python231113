@@ -1,0 +1,55 @@
+Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+
+len("문자열")
+3
+
+dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__']
+
+
+
+i=100
+j=3.14
+strA="파이썬은 강력해"
+strB="python is very powerful"
+
+dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'i', 'j', 'strA', 'strB']
+i
+100
+strA
+'파이썬은 강력해'
+len(strB)
+23
+len(strA)
+8
+lent(strB)
+Traceback (most recent call last):
+  File "<pyshell#10>", line 1, in <module>
+    lent(strB)
+NameError: name 'lent' is not defined. Did you mean: 'len'?
+strC="""이 문자열은
+다중 라인을
+저장합니다."""
+strC
+'이 문자열은\n다중 라인을\n저장합니다.'
+len(strC)
+20
+print(strC)
+이 문자열은
+다중 라인을
+저장합니다.
+
+	
+
+"py" "thon"
+'python'
+"py"+"thon"
+'python'
+'oy'*5
+'oyoyoyoyoy'
+
+
+마우스 블럭지정 후 엔터  -> 복사
+		
