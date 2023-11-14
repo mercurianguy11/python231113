@@ -50,16 +50,50 @@ print(result)
 print("----- 지역변수와 전역변수----")
 x=5
 def func(a):
-    print("## input value a =",a, "전역변수 x =",x)
+    print("## func : input value a =",a, "전역변수 x =",x)
     return a+x  # 함수 내부에 해당 이름이 없기에 전역 영역에서 찾아서 return 
 print(func(1))
 
 def func2(a):
     x=2
-    print("## input value a = %d, 지역변수 x = %d" % (a,x))
+    print("## func2 : input value a = %d, 지역변수 x = %d" % (a,x))
     return a+x  # 함수 내부에 x라는 이름이 등록됨, 지역변수를 사용하여 return
 print(func2(1))
 
+def time(a=10, b=20):
+    print("## time : input value a = %d, b = %d" % (a,b))
+    return a*b
+
+#print(times())  # error
+#print(times(5))
+print(times(5,6))
+
+def connectURI(server, port):
+    strURL = "http://" + server + ":" +port
+    return strURL
+print(connectURI("naver.com","80"))
+print(connectURI(port="8080", server="daum.net"))
+
+def union(*ar):
+    result=[]
+    for item in ar:
+        print("## union : item = %s" % item)
+        for x in item:
+            print("## union : x = %s" % x)
+            if x not in result:
+                print("## union : append - %s" % x)
+                result.append(x)
+    return result
+
+print(union("HAM","EGG"))
+print(union("HAM","EGG","SPAM"))
+
+# 문법 -> lambda  인자 : <구문>
+g=lambda x,y:x*y   # lambda 익명함수 : 일회성, 즉흥적 -> 한줄 코딩 (g 변수에 흔적을 남김)
+print(g(2,3))
+print((lambda x:x*x)(3)) # 함수정의 후 바로 호출 -> 흔적이 없다.
+
+print(globals())
 
 
 
