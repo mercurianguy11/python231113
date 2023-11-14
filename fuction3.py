@@ -60,17 +60,24 @@ def func2(a):
     return a+x  # 함수 내부에 x라는 이름이 등록됨, 지역변수를 사용하여 return
 print(func2(1))
 
-def time(a=10, b=20):
+
+#기본값이 있는 함수
+def times(a=10,b=20):
     print("## time : input value a = %d, b = %d" % (a,b))
     return a*b
 
-#print(times())  # error
-#print(times(5))
+#호출
+print(times())  # error
+print(times(5))
 print(times(5,6))
 
+
+#키워드 인자(매개변수명 기술)
 def connectURI(server, port):
     strURL = "http://" + server + ":" +port
     return strURL
+
+#호출
 print(connectURI("naver.com","80"))
 print(connectURI(port="8080", server="daum.net"))
 
@@ -88,13 +95,43 @@ def union(*ar):
 print(union("HAM","EGG"))
 print(union("HAM","EGG","SPAM"))
 
-# 문법 -> lambda  인자 : <구문>
+
+# ChatGPT 자동 주석 -> shift + enter 주석 달아줘
+# 함수 정의: connectURI
+# 매개변수: server, port
+def connectURI(server, port):
+    # URL을 조합하여 반환
+    strURL = "http://" + server + ":" + port
+    return strURL
+
+# 함수 호출 및 출력
+print(connectURI("naver.com", "80"))  # "http://naver.com:80"
+print(connectURI(port="8080", server="daum.net"))  # "http://daum.net:8080"
+
+# 함수 정의: union
+# 가변인자(*ar)를 사용하여 여러 개의 인자를 받음
+def union(*ar):
+    result = []  # 결과를 담을 리스트 초기화
+    for item in ar:
+        print("## union: item = %s" % item)
+        for x in item:
+            print("## union: x = %s" % x)
+            if x not in result:
+                print("## union: append - %s" % x)
+                result.append(x)
+    return result
+
+# 함수 호출 및 출력
+print(union("HAM", "EGG"))  # ['H', 'A', 'M', 'E', 'G']
+print(union("HAM", "EGG", "SPAM"))  # ['H', 'A', 'M', 'E', 'G', 'S', 'P']
+
+
+# 람다 함수 (이름이 없는 간단한 함수정의)
+# 문법 -> lambda 입력:처리
 g=lambda x,y:x*y   # lambda 익명함수 : 일회성, 즉흥적 -> 한줄 코딩 (g 변수에 흔적을 남김)
 print(g(2,3))
-print((lambda x:x*x)(3)) # 함수정의 후 바로 호출 -> 흔적이 없다.
-
+print(g(5,6))
+print((lambda x:x*x)(3)) # 함수정의 후 바로 호출 -> 흔적이 없다. globals 에 없음..
 print(globals())
-
-
 
 
