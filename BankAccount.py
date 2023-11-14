@@ -140,3 +140,5 @@ account2._BankAccount__balance = 150000000
 print(account2)
 
 print ("\n----- 전체 코드 실행 종료--------")
+
+# 플라이트시뮬레이터 2024
