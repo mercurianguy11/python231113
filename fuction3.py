@@ -46,13 +46,21 @@ print(result)
 # python namespace:func    지역변수 x
 # 파이썬 우선순위  LGB -> Local, Global, Built-in 
 
-x=1
+
+print("----- 지역변수와 전역변수----")
+x=5
 def func(a):
+    print("## input value a =",a, "전역변수 x =",x)
     return a+x  # 함수 내부에 해당 이름이 없기에 전역 영역에서 찾아서 return 
 print(func(1))
 
 def func2(a):
     x=2
+    print("## input value a = %d, 지역변수 x = %d" % (a,x))
     return a+x  # 함수 내부에 x라는 이름이 등록됨, 지역변수를 사용하여 return
 print(func2(1))
+
+
+
+
 
