@@ -81,3 +81,10 @@ Person1.title = "new title"
 print(p1.title)    # 인스턴스를 뒤졌는데 title이 없다. 클래스를 뒤진다. 전역변수를 뒤진다
 print(p3.title)    # 자동완성이 안뜨면 가급적 사용 자제.... 클래스 정의 후 추가 작성 가능성 많음... 에러 표시 안함..
 print(Person1.title)
+
+print("\n---- modified Person title for each instance -------")
+p1.title = "Person p1"
+p3.title = "Person p3"
+print(p1.title)
+print(p3.title)
+print(Person1.title)
