@@ -17,12 +17,13 @@
 # 1. import sampleset : 이름충돌을 피하기 위해 방을 만들고 사용 - 방이름을 써야함 ex) sampleset.union(a,b)
 # 2. from <모듈> import <어트리뷰트> - ex) from sampleset import union -> union([1,2,3], [3,4,5]) : 쉽게 쓰겠다... sampleset 쓸필요 없음.
 # 3. from sampleset import * : sampleset 모듈에 모든 함수를 가져옴 -> __로 시작하는 어트리뷰트를 제외하고 모든 어트리뷰트를 현재의 이름공간으로 임포트한다.
+# 4. import testmodule as t1
 
 # examples...
 # 1. import sampleset
 # 2. from sampleset import union
 # 3. from sampleset import *
-
+# 4. import testmodule as t1
 
 # restart shell : ctrl + F6
 
