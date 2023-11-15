@@ -1,3 +1,4 @@
+# DemoSqlite3_ex2.py
 # DemoSqlite3.py
 
 # DDL(Data Definition Language) : 데이터베이스의 객체를 생성, 수정, 삭제하는 언어 (create, alter, drop)
@@ -58,11 +59,11 @@
 # BLOB	Binary Large OBject. 입력 데이터를 그대로 저장
 
 import sqlite3
-# con = sqlite3.connect("c:\\work\\test.db")
+con = sqlite3.connect("c:\\work\\test_commit.db")
 
 # 메모리에서 작업
 # 연결객체 리턴받기
-con = sqlite3.connect(":memory:")
+# con = sqlite3.connect(":memory:")
 
 # 커서객체 리턴
 cur = con.cursor()
@@ -115,5 +116,29 @@ print(cur.fetchall())
 
 # transaction 작업 후 commit 하지 않으면 .db에 write 안하고 rollback 된다... 중요!!!
 # transaction proccessing
+# commit 하기전..
 
+# import testmodule as t1
+# hello world
+# import sqlite3
+# con = sqlite3.connect("c:\\work\\test.db")
+# cur = con.cursor()
+# cur.execute("select * from PhoneBook;")
+# <sqlite3.Cursor object at 0x000001F086A96540>
+# print(cur.fetchall())
+# []  ->> database empty!!!!
 
+# commit 해줘야한다.
+
+# 작업을 정상적으로 완료(commit)
+con.commit()
+
+# commit 완료 후 database 업데이트 확인!!!!
+# con = sqlite3.connect("c:\\work\\test_commit.db")
+# cur = con.cursor()
+# cur.execute("select * from PhoneBook;")
+# <sqlite3.Cursor object at 0x000001F086B68BC0>
+# print(cur.fetchall())
+# [('derick', '010-222'), ('tom', '010-333'), ('alice', '010-123'), ('joker', '010-444'), ('joy', '010-555'), ('jinny', '010-666')]
+
+# GNU, apache, MIT license 참고..
