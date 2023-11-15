@@ -13,6 +13,7 @@
 
 from os.path import *
 import glob
+import os
 
 print(dir())
 print(dir(glob))
@@ -39,3 +40,35 @@ for item in result:
     # print(item) ## 절대경로 
 
 # https://wikidocs.net/book/5445 ->  점프 투 파이썬 - 라이브러리 예제 편   
+
+
+print("#### examples ####")
+# .py 확장자 파일 검색
+def search(dirname):
+    filenames = os.listdir(dirname)
+    for filename in filenames:
+        filepath = os.path.join(dirname, filename)
+        if os.path.isdir(filepath):
+            search(filepath)
+        elif os.path.isfile(filepath):
+            name, ext = os.path.splitext(filepath)
+            if ext == '.py': 
+                print(basename(filepath))
+
+
+search("C:\\work")       
+
+print("운영체제이름:{0}".format(os.name))
+print("환경변수:{0}".format(os.environ))
+
+# 메모장 실행
+# os.system("notepad.exe")
+
+
+print("#### 파일 목로 리스트 ####")
+os.chdir("..")
+os.chdir("c:\\python310")
+result = glob.glob("*.*")
+#print(result)
+for item in result:
+    print(basename(item))
