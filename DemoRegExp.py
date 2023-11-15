@@ -44,6 +44,7 @@
 # re모듈의 함수 사용:
 # 문자열 검색을 할 때 두 함수 모두 첫 인자로 찾고자 하는 패턴을, 두 번째 인자로 검색 대상 문자열을 받아들인다. 
 
+#정규표현식을 사용하는 경우
 import re
 
 print(re.match("[0-9]*th","35th"))
@@ -51,6 +52,14 @@ print(re.search("[0-9]*th","35th"))
 
 # 두 함수의 다른 점은 re.match() 함수는 대상 문자열의 시작부터 검색하지만 
 # re.search()함수는 대상 문자열 전체를 대상으로 검색한다는 것이다.  
+
+# result = re.match("[0-9]*th","  35th")
+# print(result)
+# print(result.group())
+
+# result = re.match("[0-9]*th","  35th")
+# print(result)
+# print(result.group())
 
 print(bool(re.match("[0-9]*th","  35th")))
 print(bool(re.search("[0-9]*th","  35th")))
@@ -80,4 +89,22 @@ print(bool(re.search("ap{2,3}le","appple")))
 print(bool(re.search("ap{2,3}le","apppple")))
 print(bool(re.search("ap{2,}le","apppple")))
 
+
+
+# 일반적인 검색
+result = re.search("[0-9]*th","35th")
+print(result)
+print(result.group())
+
+# # 정확하게 일치
+result = re.match("[0-9]*th","35th")
+print(result)
+print(result.group())
+
+
+result = re.search("\d{4}","올해는 2023년")
+print(result.group())  # 찾은 문자열만 보여준다.
+
+result = re.search("\d{5}","우리동네는 51200")
+print(result.group())
 

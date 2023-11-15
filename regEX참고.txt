@@ -1,0 +1,83 @@
+*이메일주소:
+파이썬의 정규표현식을 사용해서 re모듈의 search()함수를 사용해서 이메일 주소를 체크하는 코드를 작성해서 샘플 10개를 테스트해줘
+
+ ChatGPTemail.py
+import re
+
+def check_email(email):
+    # Define the regular expression pattern for a basic email address
+    pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+
+    # Use the search() function to find a match in the email address
+    match = re.search(pattern, email)
+
+    # Check if a match is found
+    if match:
+        return True
+    else:
+        return False
+
+# Sample email addresses for testing
+sample_emails = [
+    'user@example.com',
+    'john.doe123@gmail.com',
+    'invalid.email@.com',
+    'missingatgmail.com',
+    '@missingusername.com',
+    'user@domainwithspaces .com',
+    'user@inva!lidchar.com',
+    'user@toolongdomainnamethatisbeyondthelimitofcharacters.com',
+    'user@valid-domain.com',
+    'user@valid.domain-with-hyphen.com',
+]
+
+# Test the sample email addresses
+for email in sample_emails:
+    result = check_email(email)
+    print(f'{email}: {"Valid" if result else "Invalid"}')
+
+
+
+*주민등록번호체크
+파이썬에서 정규표현식을 사용해서 re모듈의 seach()함수를 사용해서 한국의 주민번호를 체크하려고 해
+숫자6자리-숫자7자리로 구성되어 있고, 앞에 6자리 숫자는 2자리 연도, 2자리 월, 2자리 일로 구성되어 있고,
+뒤쪽 숫자7자리의 첫자리는 1과 2로만 구성되어 있어
+테스트하는 샘플 코드도 10개 추가해줘
+
+
+# ChatGPT_checkNum.py
+import re
+
+def check_resident_number(resident_number):
+    # Define the regular expression pattern for Korea's resident registration number
+    pattern = r'^(\d{2})(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])-(1|2)\d{6}$'
+
+    # Use the search() function to find a match in the resident registration number
+    match = re.search(pattern, resident_number)
+
+    # Check if a match is found
+    if match:
+        return True
+    else:
+        return False
+
+# Sample resident registration numbers for testing
+sample_resident_numbers = [
+    '920101-1234567',
+    '990214-2345678',
+    '880312-1122334',
+    '760525-2123456',
+    '051122-1122334',
+    '030512-2123456',
+    '201301-1122334',  # Invalid month (13)
+    '890232-2123456',  # Invalid day (32)
+    '980215-3456789',  # Invalid first digit of the last 7 digits (3)
+    '070701-0123456',  # Valid resident number
+]
+
+# Test the sample resident registration numbers
+for resident_number in sample_resident_numbers:
+    result = check_resident_number(resident_number)
+    print(f'{resident_number}: {"Valid" if result else "Invalid"}')
+
+
