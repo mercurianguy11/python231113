@@ -6,14 +6,12 @@ hRst = 2
  (C:\Program Files (x86)\AhnLab\APC2\Policy Agent\AmAsz.exe)lpParam : -1, 0, 999, ????????? ??????????. (2014.02.07.00)
 RegOpenKey(Software\AHNLAB\APC2\Policy Agent) : 0
 RegQueryValueEx(C:\Program Files (x86)\AhnLab\APC2\Policy Agent) : 0
-hRst = 2 error 발생 100:
+hRst = 2
  (C:\Program Files (x86)\AhnLab\APC2\Policy Agent\AmV3Pro.exe)hRst = 2
  (C:\Program Files (x86)\AhnLab\APC2\Policy Agent\AmAsz.exe)lpParam : -1, 0, 999, ????????? ??????????. (2014.03.11.01)
 RegOpenKey(Software\AHNLAB\APC2\Policy Agent) : 0
 RegQueryValueEx(C:\Program Files (x86)\AhnLab\APC2\Policy Agent) : 0
 hRst = 2
-
-error 발생 100:
  (C:\Program Files (x86)\AhnLab\APC2\Policy Agent\AmV3Pro.exe)hRst = 2
  (C:\Program Files (x86)\AhnLab\APC2\Policy Agent\AmAsz.exe)lpParam : -1, 0, 999, ????????? ??????????. (2014.05.29.01)
 RegOpenKey(Software\AHNLAB\APC2\Policy Agent) : 0
