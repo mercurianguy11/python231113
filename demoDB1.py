@@ -42,3 +42,12 @@ print(cur.fetchmany(2))
 print("===fetchall()===")
 cur.execute("select * from PhoneBook;")
 print(cur.fetchall())
+
+
+# DB Browser for SQLite3
+# 새 데이터베이스 -> DB명 작성 -> 테이블명 작성 -> 타입추가 -> 변경사항 저장하기 -> 테이블 열값 추가 -> 변경사항 저장하기
+# NN : not null
+# PK : prmary key
+# AI : automatic increment
+# U : Unique
+
