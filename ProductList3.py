@@ -5,6 +5,13 @@ from PyQt5 import uic
 import sqlite3
 import os.path 
 
+# Qtable 위젯 : Grid , Spread
+# (행, 열)
+# (0,0) (0,1)
+# (1,0) (1,1)
+# (2,0) (2,1)
+# (3,0) (3,1)
+
 #DB파일이 없으면 만들고 있다면 접속한다. 
 if os.path.exists("ProductList.db"):
     con = sqlite3.connect("ProductList.db")
