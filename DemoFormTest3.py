@@ -60,3 +60,17 @@ if __name__ == "__main__":
     demoForm = DemoFromTest3()
     demoForm.show()
     app.exec_()
+
+
+# 100% 코드로 작성하기..
+# import sys
+# from PyQt5.QtWidgets import *
+# import urllib.request
+# from bs4 import BeautifulSoup
+# class Form(QMainWindow):
+#     def __init__(self):
+#         super().__init__()
+#         self.setupUI()
+#     def setupUI(self):
+#         #창의 시작위치와 폭, 높이(x,y,width,height) 
+#         self.setGeometry(200, 200, 800, 800)  

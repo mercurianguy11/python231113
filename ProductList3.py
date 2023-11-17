@@ -111,13 +111,16 @@ class Window(QMainWindow, form_class):
             self.tableWidget.setItem(row, 1, QTableWidgetItem(item[1]))
             
             #각 열을 Item으로 생성해서 숫자를 오른쪽으로 정렬해서 출력한다. 
+            # (0,0) (0,1) (0,2)
+            # (1,0) (1,1) (1,2)
+            # (2,0) (2,1) (2,2)
             itemPrice = QTableWidgetItem(int_as_strPrice) 
             itemPrice.setTextAlignment(Qt.AlignRight) 
-            self.tableWidget.setItem(row, 2, itemPrice)
-            
+            self.tableWidget.setItem(row, 2, itemPrice) # 0부터 시작한다.. column이 3개...
+
             row += 1
             print("row: ", row)  
-
+         
     def doubleClick(self):
         self.prodID.setText(self.tableWidget.item(self.tableWidget.currentRow(), 0).text())
         self.prodName.setText(self.tableWidget.item(self.tableWidget.currentRow(), 1).text())
